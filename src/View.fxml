@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.net.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="1294.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController">
+   <right>
+      <SplitPane orientation="VERTICAL" prefHeight="499.0" prefWidth="556.0">
+        <items>
+            <AnchorPane minWidth="370.0" prefHeight="497.0" prefWidth="441.0">
+               <children>
+                  <TextArea fx:id="tikz" layoutX="3.0" layoutY="40.0" prefHeight="417.0" prefWidth="550.0" />
+                  <Separator layoutY="37.0" prefWidth="200.0" />
+                  <Button layoutX="2.0" layoutY="457.0" mnemonicParsing="false" onAction="#selectTikzToGraph" prefHeight="38.0" prefWidth="551.0" text="Graph ← Tikz">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="2.0" mnemonicParsing="false" onAction="#selectGraphToTikz" prefHeight="39.0" prefWidth="550.0" text="Graph → Tikz">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </right>
+   <left>
+      <SplitPane dividerPositions="0.5608856088560885" prefHeight="499.0" prefWidth="273.0">
+         <items>
+            <Pane prefHeight="503.0" prefWidth="148.0">
+               <children>
+                  <TreeView fx:id="filesTree" layoutX="1.0" layoutY="34.0" prefHeight="437.0" prefWidth="267.0" />
+                  <TextField fx:id="itemName" layoutX="1.0" prefHeight="34.0" prefWidth="146.0" text="Untitled document">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font></TextField>
+                  <Label fx:id="print1" layoutX="8.0" layoutY="471.0" prefHeight="25.0" prefWidth="131.0" text="By : BGLN">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="140.0">
+               <children>
+                  <Separator layoutX="-14.0" layoutY="23.0" prefWidth="200.0" />
+                  <Button fx:id="square" layoutX="1.0" layoutY="23.0" minHeight="38.0" minWidth="38.0" mnemonicParsing="false" onAction="#selectSquare" prefHeight="36.0" prefWidth="36.0" text="■">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="77.0" layoutY="23.0" minHeight="38.0" minWidth="38.0" mnemonicParsing="false" onAction="#selectRectangle" prefHeight="36.0" prefWidth="36.0" text="▬">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="39.0" layoutY="23.0" minHeight="38.0" minWidth="38.0" mnemonicParsing="false" onAction="#selectCircle" prefHeight="36.0" prefWidth="36.0" text="●">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="node" layoutX="30.0" layoutY="4.0" text="NODE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.4775280898876405" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#ff0101" />
+                              <Stop color="BLACK" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+                  <Separator layoutX="-53.0" layoutY="104.0" prefWidth="200.0" />
+                  <Separator layoutX="-40.0" layoutY="127.0" prefWidth="200.0" />
+                  <Button layoutX="1.0" layoutY="128.0" minHeight="38.0" minWidth="38.0" mnemonicParsing="false" onAction="#selectArc" prefHeight="36.0" prefWidth="36.0" text="→">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="39.0" layoutY="128.0" mnemonicParsing="false" onAction="#selectEdge" prefHeight="38.0" prefWidth="38.0" text="↔" />
+                  <Button layoutX="77.0" layoutY="128.0" mnemonicParsing="false" onAction="#selectLoop" prefHeight="38.0" prefWidth="38.0" text="☊" />
+                  <Label fx:id="labelSize1" layoutX="2.0" layoutY="366.0" prefHeight="24.0" prefWidth="67.0" text="Side" />
+                  <Label fx:id="labelSize2" layoutX="2.0" layoutY="391.0" prefHeight="24.0" prefWidth="67.0" />
+                  <TextField fx:id="labelText" layoutX="50.0" layoutY="213.0" prefHeight="25.0" prefWidth="60.0" />
+                  <TextField fx:id="sizeText3" layoutX="67.0" layoutY="416.0" prefHeight="25.0" prefWidth="38.0" />
+                  <Label layoutX="9.0" layoutY="214.0" prefHeight="24.0" prefWidth="40.0" text="Label" />
+                  <Label fx:id="labelSize3" layoutX="2.0" layoutY="416.0" prefHeight="24.0" prefWidth="67.0" />
+                  <Separator layoutX="-31.0" layoutY="171.0" prefWidth="200.0" />
+                  <ColorPicker fx:id="fillColor" layoutX="54.0" layoutY="266.0" prefHeight="25.0" prefWidth="56.0" />
+                  <TextField fx:id="sizeText2" layoutX="67.0" layoutY="391.0" prefHeight="25.0" prefWidth="38.0" text="20" />
+                  <TextField fx:id="sizeText1" layoutX="67.0" layoutY="366.0" prefHeight="25.0" prefWidth="38.0" text="50" />
+                  <TextField fx:id="thicknessText" layoutX="67.0" layoutY="343.0" prefHeight="25.0" prefWidth="38.0" text="1" />
+                  <Label fx:id="labelThickness" layoutX="2.0" layoutY="344.0" prefHeight="24.0" prefWidth="67.0" text="Thickness" />
+                  <Separator layoutX="-14.0" layoutY="207.0" prefWidth="200.0" />
+                  <Label fx:id="node1" layoutX="30.0" layoutY="106.0" text="EDGE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.4775280898876405" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#ff0101" />
+                              <Stop color="BLACK" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="node11" layoutX="18.0" layoutY="181.0" text="PANEL">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.4775280898876405" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#ff0101" />
+                              <Stop color="BLACK" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+                  <ToggleButton fx:id="addButton" layoutX="2.0" layoutY="470.0" mnemonicParsing="false" onAction="#selectAdd" prefHeight="25.0" prefWidth="54.0" text="Add" />
+                  <ToggleButton fx:id="editButton" layoutX="57.0" layoutY="470.0" mnemonicParsing="false" onAction="#selectEdit" prefHeight="25.0" prefWidth="55.0" text="Edit" />
+                  <Separator layoutX="-40.0" layoutY="318.0" prefWidth="200.0" />
+                  <Label layoutX="39.0" layoutY="318.0" prefHeight="24.0" prefWidth="34.0" text="Size">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="-40.0" layoutY="340.0" prefWidth="200.0" />
+                  <Label layoutX="7.0" layoutY="266.0" prefHeight="26.0" prefWidth="29.0" text="Fill" />
+                  <Label layoutX="7.0" layoutY="292.0" prefHeight="26.0" prefWidth="45.0" text="Stroke" />
+                  <ColorPicker fx:id="strokeColor" layoutX="54.0" layoutY="292.0" prefHeight="25.0" prefWidth="56.0" />
+                  <Separator layoutX="-48.0" layoutY="263.0" prefWidth="200.0" />
+                  <Label layoutX="37.0" layoutY="242.0" prefHeight="24.0" prefWidth="47.0" text="Color">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="-45.0" layoutY="441.0" prefWidth="200.0" />
+                  <Button fx:id="applyButton" layoutX="78.0" layoutY="174.0" mnemonicParsing="false" onAction="#selectApply" text="⇰">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <ToggleButton fx:id="moveButton" layoutX="1.0" layoutY="443.0" mnemonicParsing="false" onAction="#selectMove" prefHeight="25.0" prefWidth="55.0" text="Move" />
+                  <Button fx:id="delButton" layoutX="57.0" layoutY="443.0" mnemonicParsing="false" onAction="#selectDel" prefHeight="25.0" prefWidth="55.0" text="Del" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </left>
+   <center>
+      <Canvas fx:id="canvas" height="497.0" width="464.0" BorderPane.alignment="CENTER_LEFT" />
+   </center>
+   <bottom>
+      <TextFlow prefHeight="58.0" prefWidth="1294.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="61.0" prefWidth="1291.0">
+               <children>
+                  <Label fx:id="lastSavedDate" layoutX="14.0" layoutY="25.0" prefHeight="25.0" prefWidth="327.0">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="print" layoutX="14.0" layoutY="-2.0" prefHeight="33.0" prefWidth="598.0" text="Choose a Node or an Edge">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="clock" contentDisplay="RIGHT" layoutX="1224.0" layoutY="37.0" prefHeight="24.0" prefWidth="68.0">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </TextFlow>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#selectProject" text="New project" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectGraph" text="New graph" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
